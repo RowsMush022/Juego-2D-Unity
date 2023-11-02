@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 534204210360747826}
   m_Layer: 0
   m_Name: EnemigoDosAguila
-  m_TagString: Untagged
+  m_TagString: Enemigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd40d773dad0bb241ae513e45e1e84f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 5
+  velocidad: 7
 --- !u!61 &534204210360747826
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -1,17 +1,17 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
     public float velocidadMovimiento = 5.0f;
     public float fuerzaSalto = 8.0f;
-    public float velocidadCaidaRapida = 10.0f; // Velocidad de caída rápida
+    public float velocidadCaidaRapida = 10.0f;
 
     private bool enElAire = false;
     private bool saltoAdicionalDisponible = true;
 
     void Update()
     {
-        // Movimiento horizontal
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Translate(Vector3.left * velocidadMovimiento * Time.deltaTime);
@@ -21,7 +21,6 @@ public class PlayerController : MonoBehaviour
             transform.Translate(Vector3.right * velocidadMovimiento * Time.deltaTime);
         }
 
-        // Salto
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             if (!enElAire)
@@ -35,7 +34,6 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        // Caída rápida
         if (Input.GetKeyDown(KeyCode.DownArrow) && enElAire)
         {
             CaerRapidamente();
@@ -63,11 +61,25 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        // Detecta si el jugador ha tocado el suelo
         if (collision.gameObject.CompareTag("Suelo"))
         {
             enElAire = false;
-            saltoAdicionalDisponible = true; // Permite un salto adicional cuando toca el suelo
+            saltoAdicionalDisponible = true;
         }
+
+        
+        if (collision.gameObject.CompareTag("Enemigo"))
+        {
+            CambiarEscena();
+        }
+    }
+
+    void CambiarEscena()
+    {
+        
+        string nombreDeEscena = "GameOver"; 
+
+        
+        SceneManager.LoadScene(nombreDeEscena);
     }
 }
