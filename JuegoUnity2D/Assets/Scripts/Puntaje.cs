@@ -29,6 +29,6 @@ public class Puntaje : MonoBehaviour
 
     private void ActualizarPuntaje()
     {
-        textoPuntaje.text = "SCORE: " + puntaje.ToString(); // Agrega "Score: " al texto
+        textoPuntaje.text = "SCORE " + puntaje.ToString(); // Agrega "Score: " al texto
     }
 }
