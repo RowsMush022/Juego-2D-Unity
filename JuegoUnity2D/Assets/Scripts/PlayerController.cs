@@ -10,6 +10,18 @@ public class PlayerController : MonoBehaviour
     private bool enElAire = false;
     private bool saltoAdicionalDisponible = true;
 
+    public AudioClip sonidoSalto; // Asigna el archivo de sonido de salto en el Inspector
+    public AudioClip sonidoColision; // Asigna el archivo de sonido de colisión en el Inspector
+    public AudioClip sonidoSaltoAire; // Asigna el archivo de sonido de salto en el aire en el Inspector
+    public AudioClip cuartoSonido; // Agrega un nuevo sonido y asígnalo en el Inspector
+
+    private AudioSource audioSource; // Referencia al componente AudioSource
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>(); // Obtén el componente AudioSource del mismo objeto
+    }
+
     void Update()
     {
         if (Input.GetKey(KeyCode.LeftArrow))
@@ -26,10 +38,12 @@ public class PlayerController : MonoBehaviour
             if (!enElAire)
             {
                 Saltar();
+                ReproducirSonido(sonidoSalto); // Reproduce el sonido de salto
             }
             else if (saltoAdicionalDisponible)
             {
                 Saltar();
+                ReproducirSonido(sonidoSaltoAire); // Reproduce el nuevo sonido de salto en el aire
                 saltoAdicionalDisponible = false;
             }
         }
@@ -37,6 +51,11 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.DownArrow) && enElAire)
         {
             CaerRapidamente();
+        }
+        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            ReproducirSonido(cuartoSonido); // Reproduce el cuarto sonido cuando presionas la barra espaciadora
         }
     }
 
@@ -67,18 +86,24 @@ public class PlayerController : MonoBehaviour
             saltoAdicionalDisponible = true;
         }
 
-        
         if (collision.gameObject.CompareTag("Enemigo"))
         {
             CambiarEscena();
+            ReproducirSonido(sonidoColision); // Reproduce el sonido de colisión con un enemigo
         }
     }
+
     void CambiarEscena()
     {
-        
-        string nombreDeEscena = "GameOver"; 
-
-        
+        string nombreDeEscena = "GameOver";
         SceneManager.LoadScene(nombreDeEscena);
+    }
+
+    void ReproducirSonido(AudioClip clip)
+    {
+        if (audioSource != null && clip != null)
+        {
+            audioSource.PlayOneShot(clip); // Reproduce el sonido especificado
+        }
     }
 }
