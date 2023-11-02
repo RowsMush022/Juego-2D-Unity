@@ -73,7 +73,6 @@ public class PlayerController : MonoBehaviour
             CambiarEscena();
         }
     }
-
     void CambiarEscena()
     {
         
