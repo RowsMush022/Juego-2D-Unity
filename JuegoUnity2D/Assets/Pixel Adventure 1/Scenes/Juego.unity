@@ -123,6 +123,55 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &279012812
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 279012814}
+  - component: {fileID: 279012815}
+  m_Layer: 0
+  m_Name: GeneradorEnemigos2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &279012814
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279012812}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 20.19, y: -1.46, z: 0.050381057}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &279012815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279012812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89f45ec7ea777764ca650be1d1699d18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabAGenerar: {fileID: 4548192355303235572, guid: abd16a2b156833b41963318fb4471ef4, type: 3}
+  posicionGeneracion: {fileID: 279012814}
+  tiempoMinimo: 3
+  tiempoMaximo: 5
+  intervaloInvokeRepeating: 5
 --- !u!1 &946915980
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,6 +304,7 @@ MonoBehaviour:
   posicionGeneracion: {fileID: 1044661107}
   tiempoMinimo: 1
   tiempoMaximo: 3
+  intervaloInvokeRepeating: 5
 --- !u!1 &1074235080
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,6 +573,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidadMovimiento: 5
   fuerzaSalto: 6
+  velocidadCaidaRapida: 10
 --- !u!1 &2057126991
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,7 +619,7 @@ GameObject:
   - component: {fileID: 2110192117}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Suelo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
