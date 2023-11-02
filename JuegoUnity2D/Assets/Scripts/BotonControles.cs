@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class BotonMenu : MonoBehaviour
+public class BotonControles : MonoBehaviour
 {
     public string nombreDeEscena; // Nombre de la escena que deseas cargar
     public AudioClip sonidoClick; // Asigna el archivo de sonido al Inspector

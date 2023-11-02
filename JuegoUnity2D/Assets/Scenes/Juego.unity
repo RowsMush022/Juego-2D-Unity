@@ -539,7 +539,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1074235080}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.2709498, y: 3.9871488, z: -0.114869885}
+  m_LocalPosition: {x: 1.2709498, y: 4.88, z: -0.114869885}
   m_LocalScale: {x: 1.1125, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1036,7 +1036,7 @@ GameObject:
   - component: {fileID: 2093694021}
   - component: {fileID: 2093694020}
   m_Layer: 5
-  m_Name: CanvasPontaje
+  m_Name: CanvasPuntaje
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
