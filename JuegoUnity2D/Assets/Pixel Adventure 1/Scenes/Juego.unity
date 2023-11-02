@@ -171,7 +171,7 @@ MonoBehaviour:
   posicionGeneracion: {fileID: 279012814}
   tiempoMinimo: 3
   tiempoMaximo: 5
-  intervaloInvokeRepeating: 5
+  intervaloInvokeRepeating: 10
 --- !u!1 &946915980
 GameObject:
   m_ObjectHideFlags: 0
