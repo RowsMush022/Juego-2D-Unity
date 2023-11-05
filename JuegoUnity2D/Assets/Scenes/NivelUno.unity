@@ -810,7 +810,7 @@ MonoBehaviour:
   velocidadCaidaRapida: 10
   sonidoSalto: {fileID: 8300000, guid: e8688381ebd1f14418ecf1240adb9ba0, type: 3}
   sonidoColision: {fileID: 8300000, guid: d3f70349af5af37499cab2f6ff497e13, type: 3}
-  sonidoSaltoAire: {fileID: 8300000, guid: 31e7ff5e0a503574b853cfbdead3b4a3, type: 3}
+  sonidoSaltoAire: {fileID: 8300000, guid: 63e98e35e413e384c9f9f57602a65c20, type: 3}
   cuartoSonido: {fileID: 0}
 --- !u!81 &1472554296
 AudioListener:

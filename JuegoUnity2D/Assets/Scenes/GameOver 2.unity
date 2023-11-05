@@ -973,7 +973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b556c1a7b354d24d849dfe79d770698, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nombreDeEscena: NivelUno
+  nombreDeEscena: NivelDos
   sonidoClick: {fileID: 8300000, guid: 59f1dca381badd84b8124306e7384444, type: 3}
 --- !u!114 &1661103451
 MonoBehaviour:
