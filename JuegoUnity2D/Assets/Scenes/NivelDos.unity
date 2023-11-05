@@ -1518,9 +1518,9 @@ GameObject:
   - component: {fileID: 1776457760}
   - component: {fileID: 1776457759}
   - component: {fileID: 1776457758}
-  - component: {fileID: 1776457757}
   - component: {fileID: 1776457756}
   - component: {fileID: 1776457755}
+  - component: {fileID: 1776457763}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1632,25 +1632,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1776457757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1776457754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bb092ce29c87f04caec206d2fad6efd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocidadMovimiento: 5
-  fuerzaSalto: 6
-  velocidadCaidaRapida: 10
-  sonidoSalto: {fileID: 8300000, guid: e8688381ebd1f14418ecf1240adb9ba0, type: 3}
-  sonidoColision: {fileID: 8300000, guid: d3f70349af5af37499cab2f6ff497e13, type: 3}
-  sonidoSaltoAire: {fileID: 8300000, guid: 63e98e35e413e384c9f9f57602a65c20, type: 3}
-  cuartoSonido: {fileID: 0}
 --- !u!61 &1776457758
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1786,6 +1767,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1776457763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776457754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b92769d41b368b45bd0b0ca5f49c434, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidadMovimiento: 5
+  fuerzaSalto: 8
+  velocidadCaidaRapida: 10
+  sonidoSalto: {fileID: 8300000, guid: e8688381ebd1f14418ecf1240adb9ba0, type: 3}
+  sonidoColision: {fileID: 8300000, guid: d3f70349af5af37499cab2f6ff497e13, type: 3}
+  sonidoSaltoAire: {fileID: 8300000, guid: 63e98e35e413e384c9f9f57602a65c20, type: 3}
+  cuartoSonido: {fileID: 0}
 --- !u!1 &1893475789
 GameObject:
   m_ObjectHideFlags: 0
