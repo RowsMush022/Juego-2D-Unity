@@ -3,23 +3,23 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    public float velocidadMovimiento = 5.0f;
-    public float fuerzaSalto = 8.0f;
-    public float velocidadCaidaRapida = 10.0f;
+    public float velocidadMovimiento = 5.0f;  // Velocidad de movimiento del jugador
+    public float fuerzaSalto = 8.0f;  // Fuerza aplicada al saltar
+    public float velocidadCaidaRapida = 10.0f;  // Velocidad de caída rápida
 
-    private bool enElAire = false;
-    private bool saltoAdicionalDisponible = true;
+    private bool enElAire = false;  // Indica si el jugador está en el aire
+    private bool saltoAdicionalDisponible = true;  // Controla la posibilidad de un segundo salto
 
-    public AudioClip sonidoSalto; // AsignaR el archivo de sonido de salto en el Inspector
-    public AudioClip sonidoColision; // AsignaR el archivo de sonido de colisión en el Inspector
-    public AudioClip sonidoSaltoAire; // AsignaR el archivo de sonido de salto en el aire en el Inspector
-    public AudioClip cuartoSonido; // AgregaR un nuevo sonido y asígnalo en el Inspector
+    public AudioClip sonidoSalto; // Asigna el archivo de sonido de salto en el Inspector
+    public AudioClip sonidoColision; // Asigna el archivo de sonido de colisión en el Inspector
+    public AudioClip sonidoSaltoAire; // Asigna el archivo de sonido de salto en el aire en el Inspector
+    public AudioClip cuartoSonido; // Agrega un nuevo sonido y asígnalo en el Inspector
 
     private AudioSource audioSource; // Referencia al componente AudioSource
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>(); // Obtén el componente AudioSource del mismo objeto
+        audioSource = GetComponent<AudioSource>(); // Obtiene el componente AudioSource del mismo objeto
     }
 
     void Update()

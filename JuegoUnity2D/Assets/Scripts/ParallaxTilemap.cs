@@ -4,10 +4,11 @@ public class ParallaxTilemap : MonoBehaviour
 {
     public float parallaxSpeed = 1.0f;  // Ajusta la velocidad de desplazamiento hacia la izquierda.
 
-    private Vector3 initialTilemapPosition;
+    private Vector3 initialTilemapPosition;  // Almacena la posición inicial del Tilemap.
 
     private void Start()
     {
+        // Guarda la posición inicial del Tilemap al iniciar.
         initialTilemapPosition = transform.position;
     }
 

@@ -11,18 +11,26 @@ public class BotonControles : MonoBehaviour
 
     void Start()
     {
+        // Obtener una referencia al componente Button adjunto a este objeto
         Button boton = GetComponent<Button>();
+
+        // Agregar un evento que escuche el clic en el botón y llame al método CargarEscena
         boton.onClick.AddListener(CargarEscena);
-        audioSource = gameObject.AddComponent<AudioSource>(); // Agregar un AudioSource al objeto
+
+        // Agregar un componente AudioSource al objeto para reproducir sonidos
+        audioSource = gameObject.AddComponent<AudioSource>();
     }
 
     void CargarEscena()
     {
+        // Comprueba si se ha asignado un sonido al hacer clic
         if (sonidoClick != null)
         {
-            audioSource.PlayOneShot(sonidoClick); // Reproduce el sonido al hacer clic
+            // Reproduce el sonido al hacer clic en el botón
+            audioSource.PlayOneShot(sonidoClick);
         }
 
+        // Carga la escena especificada en la variable nombreDeEscena
         SceneManager.LoadScene(nombreDeEscena);
     }
 }

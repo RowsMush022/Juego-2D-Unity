@@ -3,11 +3,11 @@ using System.Collections;
 
 public class GeneradorDePrefabAguila : MonoBehaviour
 {
-    public GameObject prefabAGenerar;
-    public Transform posicionGeneracion;
-    public float tiempoMinimo = 4.0f;  // Intervalo de tiempo mínimo más largo
-    public float tiempoMaximo = 6.0f;  // Intervalo de tiempo máximo más largo
-    public float intervaloInvokeRepeating = 10.0f;  // Intervalo de tiempo más largo para InvokeRepeating
+    public GameObject prefabAGenerar; // El prefab que se generará
+    public Transform posicionGeneracion; // La posición donde se generará el prefab
+    public float tiempoMinimo = 4.0f; // El tiempo mínimo para la generación de prefabs (intervalo más largo)
+    public float tiempoMaximo = 6.0f; // El tiempo máximo para la generación de prefabs (intervalo más largo)
+    public float intervaloInvokeRepeating = 10.0f; // El intervalo de tiempo más largo para InvokeRepeating
 
     void Start()
     {
@@ -28,8 +28,10 @@ public class GeneradorDePrefabAguila : MonoBehaviour
     {
         while (true)
         {
+            // Generar un tiempo de espera aleatorio dentro del rango definido.
             float tiempoEspera = Random.Range(tiempoMinimo, tiempoMaximo);
 
+            // Esperar el tiempo definido antes de generar el prefab.
             yield return new WaitForSeconds(tiempoEspera);
 
             // Generar un prefab utilizando Invoke para un único evento en un tiempo aleatorio.

@@ -4,19 +4,22 @@ using UnityEngine;
 
 public class FondoParallax : MonoBehaviour
 {
-    [SerializeField] private Vector2 velocidadMovimiento;
-    private Vector2 offset;
-    private Material material;
+    [SerializeField] private Vector2 velocidadMovimiento; // La velocidad a la que el fondo se mueve
+    private Vector2 offset; // El desplazamiento del fondo
+    private Material material; // El material del objeto con el fondo
 
-     private void Awake() 
+    private void Awake()
     {
-        
-             material= GetComponent<SpriteRenderer>().material;
-
+        // Obtener el material del componente SpriteRenderer adjunto a este objeto
+        material = GetComponent<SpriteRenderer>().material;
     }
+
     void Update()
     {
-        offset= velocidadMovimiento*Time.deltaTime;
-        material.mainTextureOffset+= offset;
+        // Calcula el desplazamiento basado en la velocidad y el tiempo
+        offset = velocidadMovimiento * Time.deltaTime;
+
+        // Aplica el desplazamiento al fondo
+        material.mainTextureOffset += offset;
     }
 }
