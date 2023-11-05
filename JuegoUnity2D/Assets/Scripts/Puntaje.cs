@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class Puntaje : MonoBehaviour
@@ -20,6 +21,11 @@ public class Puntaje : MonoBehaviour
         }
 
         ActualizarPuntaje();
+
+        if (puntaje >= 500)
+        {
+            CambiarEscena();
+        }
     }
 
     private void AumentarPuntaje()
@@ -29,7 +35,13 @@ public class Puntaje : MonoBehaviour
 
     private void ActualizarPuntaje()
     {
-        textoPuntaje.text = "" + puntaje.ToString(); // Agrega "Score: " al texto
+        textoPuntaje.text = "" + puntaje.ToString(); // Muestra el puntaje
         PlayerPrefs.SetInt("Puntaje", puntaje);
+    }
+
+    private void CambiarEscena()
+    {
+        string nombreDeEscena = "Ganaste"; // Reemplaza "TuEscena" con el nombre de la escena a la que quieras ir
+        SceneManager.LoadScene(nombreDeEscena);
     }
 }
