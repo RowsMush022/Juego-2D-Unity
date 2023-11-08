@@ -3,59 +3,62 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    public float velocidadMovimiento = 5.0f;  // Velocidad de movimiento del jugador
-    public float fuerzaSalto = 8.0f;  // Fuerza aplicada al saltar
-    public float velocidadCaidaRapida = 10.0f;  // Velocidad de caída rápida
+    public float velocidadMovimiento = 5.0f;
+    public float fuerzaSalto = 8.0f;
+    public float velocidadCaidaRapida = 10.0f;
 
-    private bool enElAire = false;  // Indica si el jugador está en el aire
-    private bool saltoAdicionalDisponible = true;  // Controla la posibilidad de un segundo salto
+    private bool enElAire = false;
+    private bool saltoAdicionalDisponible = true;
 
-    public AudioClip sonidoSalto; // Asigna el archivo de sonido de salto en el Inspector
-    public AudioClip sonidoColision; // Asigna el archivo de sonido de colisión en el Inspector
-    public AudioClip sonidoSaltoAire; // Asigna el archivo de sonido de salto en el aire en el Inspector
-    public AudioClip cuartoSonido; // Agrega un nuevo sonido y asígnalo en el Inspector
+    public AudioClip sonidoSalto;
+    public AudioClip sonidoColision;
+    public AudioClip sonidoSaltoAire;
+    public AudioClip cuartoSonido;
 
-    private AudioSource audioSource; // Referencia al componente AudioSource
+    private AudioSource audioSource;
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>(); // Obtiene el componente AudioSource del mismo objeto
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.Translate(Vector3.left * velocidadMovimiento * Time.deltaTime);
-        }
-        else if (Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.Translate(Vector3.right * velocidadMovimiento * Time.deltaTime);
-        }
+        MoverJugador();
+        ManejarSalto();
+        ManejarCaerRapidamente();
+        ManejarSonido();
+    }
 
+    void MoverJugador()
+    {
+        float horizontalInput = Input.GetAxis("Horizontal");
+        transform.Translate(Vector3.right * horizontalInput * velocidadMovimiento * Time.deltaTime);
+    }
+
+    void ManejarSalto()
+    {
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             if (!enElAire)
             {
                 Saltar();
-                ReproducirSonido(sonidoSalto); // Reproduce el sonido de salto
+                ReproducirSonido(sonidoSalto);
             }
             else if (saltoAdicionalDisponible)
             {
                 Saltar();
-                ReproducirSonido(sonidoSaltoAire); // Reproduce el nuevo sonido de salto en el aire
+                ReproducirSonido(sonidoSaltoAire);
                 saltoAdicionalDisponible = false;
             }
         }
+    }
 
+    void ManejarCaerRapidamente()
+    {
         if (Input.GetKeyDown(KeyCode.DownArrow) && enElAire)
         {
             CaerRapidamente();
-        }
-        
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            ReproducirSonido(cuartoSonido); // Reproduce el cuarto sonido cuando presionas la barra espaciadora
         }
     }
 
@@ -78,6 +81,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void ManejarSonido()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            ReproducirSonido(cuartoSonido);
+        }
+    }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Suelo"))
@@ -89,13 +100,13 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemigo"))
         {
             CambiarEscena();
-            ReproducirSonido(sonidoColision); // Reproduce el sonido de colisión con un enemigo
+            ReproducirSonido(sonidoColision);
         }
     }
 
     void CambiarEscena()
     {
-        string nombreDeEscena = "GameOver";
+        string nombreDeEscena = "GameOver 2";
         SceneManager.LoadScene(nombreDeEscena);
     }
 
@@ -103,7 +114,7 @@ public class PlayerController : MonoBehaviour
     {
         if (audioSource != null && clip != null)
         {
-            audioSource.PlayOneShot(clip); // Reproduce el sonido especificado
+            audioSource.PlayOneShot(clip);
         }
     }
 }

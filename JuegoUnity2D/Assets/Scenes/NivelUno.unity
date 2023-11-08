@@ -1043,7 +1043,7 @@ GameObject:
   - component: {fileID: 1491463286}
   - component: {fileID: 1491463289}
   - component: {fileID: 1491463288}
-  - component: {fileID: 1491463287}
+  - component: {fileID: 1491463290}
   m_Layer: 5
   m_Name: Puntaje
   m_TagString: Untagged
@@ -1071,21 +1071,6 @@ RectTransform:
   m_AnchoredPosition: {x: 83, y: 350}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1491463287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1491463285}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2838abc95f72284eac9f8c95d7a7a3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textoPuntaje: {fileID: 1491463288}
-  velocidadAumentoPuntaje: 1
-  tiempoParaAumento: 0.1
 --- !u!114 &1491463288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1183,6 +1168,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1491463285}
   m_CullTransparentMesh: 1
+--- !u!114 &1491463290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491463285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2838abc95f72284eac9f8c95d7a7a3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textoPuntaje: {fileID: 1491463288}
+  velocidadAumentoPuntaje: 10
+  tiempoParaAumento: 0.1
 --- !u!1 &2057126991
 GameObject:
   m_ObjectHideFlags: 0
